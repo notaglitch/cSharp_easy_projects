@@ -6,14 +6,16 @@ namespace MyNamespace
     {
         static void Main(string[] args)
         {
+            string color, pluralnoun, celebrity;
+
             Console.WriteLine("Enter a color: ");
-            string color = Console.ReadLine();
+            color = Console.ReadLine();
 
             Console.WriteLine("Enter a plural noun: ");
-            string pluralnoun = Console.ReadLine();
+            pluralnoun = Console.ReadLine();
 
             Console.WriteLine("Enter a celebrity name: ");
-            string celebrity = Console.ReadLine();
+            celebrity = Console.ReadLine();
 
             Console.WriteLine("Roses are " + color);
             Console.WriteLine(pluralnoun + " are blue");
