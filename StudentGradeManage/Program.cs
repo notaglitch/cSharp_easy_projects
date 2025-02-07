@@ -6,65 +6,71 @@
         {
             while (true)
             {    
-                List<Student> students = new List<Student>();
-                students[0] = new Student("John", "A", "Math");
-                students[1] = new Student("Jane", "B", "Science");
-                students[2] = new Student("Jim", "C", "History");
-
-                Console.WriteLine("Welcome to the Student Grade Management System");
-                Console.WriteLine("[ 1 ] Add Student");
-                Console.WriteLine("[ 2 ] View All Students");
-                Console.WriteLine("[ 3 ] Exit");
-
-                int choice = Console.ReadLine();
-                if (!int.TryParse(Console.ReadLine(), out choice))
+                try
                 {
-                    Console.WriteLine("Invalid input. Please enter a valid number.");
-                    continue;
-                }
+                    List<Student> students = new List<Student>();
+                    students[0] = new Student("John", "A", "Math");
+                    students[1] = new Student("Jane", "B", "Science");
+                    students[2] = new Student("Jim", "C", "History");
 
+                    Console.WriteLine("Welcome to the Student Grade Management System");
+                    Console.WriteLine("[ 1 ] Add Student");
+                    Console.WriteLine("[ 2 ] View All Students");
+                    Console.WriteLine("[ 3 ] Exit");
 
-                if (choice == 1)
-                {
-                    try
+                    int choice = Console.ReadLine();
+                    if (!int.TryParse(Console.ReadLine(), out choice))
                     {
-                        string[] studentDetails = Console.ReadLine().Split(',');
-                        if(studentDetails.Length != 3)
+                        Console.WriteLine("Invalid input. Please enter a valid number.");
+                        continue;
+                    }
+
+
+                    if (choice == 1)
+                    {
+                        try
                         {
-                            Console.WriteLine("Invalid input. Please enter the correct number of details.");
-                            continue;
+                            string[] studentDetails = Console.ReadLine().Split(',');
+                            if(studentDetails.Length != 3)
+                            {
+                                Console.WriteLine("Invalid input. Please enter the correct number of details.");
+                                continue;
+                            }
+                            students.Add(new Student(details[0].Trim(), details[1].Trim(), details[2].Trim()));
                         }
-                        students.Add(new Student(details[0].Trim(), details[1].Trim(), details[2].Trim()));
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Error: {ex.Message}");
+                        }
+
+
+
+                        Console.WriteLine("Enter student details: 'John, A, Math'");
+                        string studentDetails = Console.ReadLine();
+                        students[students.Length - 1] = new Student(studentDetails);
                     }
-                    catch (Exception ex)
+                    else if (choice == 2)
                     {
-                        Console.WriteLine($"Error: {ex.Message}");
+                        foreach (Student student in students)
+                        {
+                            if (student != null)
+                            {
+                                Console.WriteLine($"Name: {student.Name}, Grade: {student.Grade}, Course: {student.Course}");
+                            }
+                        }
+
                     }
-
-
-
-                    Console.WriteLine("Enter student details: 'John, A, Math'");
-                    string studentDetails = Console.ReadLine();
-                    students[students.Length - 1] = new Student(studentDetails);
-                }
-                else if (choice == 2)
-                {
-                    foreach (Student student in students)
+                    else if (choice == 3)
                     {
-                        Console.WriteLine($"Name: {student.Name}, Grade: {student.Grade}, Course: {student.Course}");
+                        Console.WriteLine("Exiting the program...");
+                        break;
                     }
                 }
-                else if (choice == 3)
+                catch (Exception ex)
                 {
-                    Console.WriteLine("Exiting the program...");
-                    return;
+                    Console.WriteLine($"An error occurred: {ex.Message}");
                 }
-
-
-
-
-                Console.ReadLine();}
-
+            }
         }
     }
 
@@ -98,16 +104,6 @@
         {
             get { return course; }
             set { course = value; }
-        }
-
-        public double GetGrade()
-        {
-            // Add logic to convert string grade to double
-            if (double.TryParse(grade, out double numericGrade))
-            {
-                return numericGrade;
-            }
-            return 0.0;
         }
     }
 }
