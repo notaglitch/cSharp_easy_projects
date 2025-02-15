@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLI_calculator", "CLI_calculator\CLI_calculator.csproj", "{43AECC01-6C07-6997-0BD0-6E5600DC0B59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLI_todo_app", "CLI_todo_app\CLI_todo_app.csproj", "{038E5680-E10C-3DF3-38D6-550F9EEF53A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43AECC01-6C07-6997-0BD0-6E5600DC0B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43AECC01-6C07-6997-0BD0-6E5600DC0B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43AECC01-6C07-6997-0BD0-6E5600DC0B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43AECC01-6C07-6997-0BD0-6E5600DC0B59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{038E5680-E10C-3DF3-38D6-550F9EEF53A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{038E5680-E10C-3DF3-38D6-550F9EEF53A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{038E5680-E10C-3DF3-38D6-550F9EEF53A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{038E5680-E10C-3DF3-38D6-550F9EEF53A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {072ADFF3-0A35-4F03-94DF-8D3C0334B437}
+	EndGlobalSection
+EndGlobal
